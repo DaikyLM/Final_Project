@@ -1,0 +1,304 @@
+package Laucher;
+
+
+import java.awt.Color;
+import java.awt.EventQueue;
+
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JDialog;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+
+
+import com.formdev.flatlaf.themes.FlatMacLightLaf;
+import java.awt.Toolkit;
+
+public class DlgConsultarCeramico extends JDialog implements ActionListener{
+
+	private static final long serialVersionUID = 1L;
+
+    private JComboBox<String> cboModelo;
+    private JLabel lblModelo;
+    private JLabel lblPrecio;
+    private JLabel lblAncho;
+    private JLabel lblLargo;
+    private JLabel lblEspesor;
+    private JLabel lblContenido;
+    private JTextField txt5;
+    private JTextField txt4;
+    private JTextField txt3;
+    private JTextField txt2;
+    private JTextField txt1;
+    private JButton btnCerrar;
+    private JPanel TOP;
+    private JPanel BUTTOM;
+    private JPanel panel_1;
+    private JPanel panel_1_1;
+    private JPanel panel_1_2;
+    private JPanel panel_1_3;
+    private JPanel panel_1_4;
+    private JPanel panel_1_5;
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+
+		/* AQUI SE HACE REFERENCIA A flatlaf PARA EL UI DESIGN */
+		try {
+			UIManager.setLookAndFeel(new FlatMacLightLaf());
+			/* AQUI LA LISTA DE ESTILOS QUE PUEDES USAR */
+			/**
+			 * UIManager.setLookAndFeel(new FlatLightLaf()); UIManager.setLookAndFeel(new
+			 * FlatDarkLaf()); UIManager.setLookAndFeel(new FlatIntelliJLaf());
+			 * UIManager.setLookAndFeel(new FlatDarculaLaf()); UIManager.setLookAndFeel(new
+			 * FlatMacLightLaf()); UIManager.setLookAndFeel(new FlatMacDarkLaf());
+			 */
+
+		} catch (UnsupportedLookAndFeelException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					DlgConsultarCeramico dialog = new DlgConsultarCeramico();
+					dialog.setLocationRelativeTo(null);
+					dialog.setVisible(true);
+					dialog.setResizable(false); 
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+	/**
+	 * Create the dialog.
+	 */
+	public DlgConsultarCeramico() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(DlgConsultarCeramico.class.getResource("/imagenes/Consultar.png")));
+		setTitle("Consulta Cerámicos");
+		getContentPane().setBackground(Color.decode("#F8EDE3"));
+		setBounds(100, 100, 517, 385);
+		setResizable(false);
+		getContentPane().setLayout(null);
+
+		btnCerrar = new JButton("Cerrar");
+		btnCerrar.setBounds(397, 150, 94, 46);
+		btnCerrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+			}
+		});
+		btnCerrar.setForeground(Color.WHITE);
+		btnCerrar.setFont(new Font("Verdana", Font.BOLD, 11));
+		btnCerrar.setBackground(new Color(133, 88, 111));
+		getContentPane().add(btnCerrar);
+		
+		TOP = new JPanel();
+		TOP.setBounds(0, 0, 501, 20);
+		TOP.setBackground(new Color(133, 88, 111));
+		getContentPane().add(TOP);
+		
+		BUTTOM = new JPanel();
+		BUTTOM.setBounds(0, 326, 501, 20);
+		BUTTOM.setBackground(new Color(133, 88, 111));
+		getContentPane().add(BUTTOM);
+		
+		panel_1 = new JPanel();
+		panel_1.setBounds(10, 42, 358, 34);
+		panel_1.setBackground(new Color(223, 211, 195));
+		getContentPane().add(panel_1);
+		panel_1.setLayout(null);
+		
+				cboModelo = new JComboBox<String>();
+				cboModelo.setBounds(117, 4, 231, 22);
+				panel_1.add(cboModelo);
+				cboModelo.setBackground(Color.WHITE);
+				cboModelo.setFont(new Font("Verdana", Font.BOLD, 12));
+				cboModelo.addActionListener(this);
+				cboModelo.setModel(new DefaultComboBoxModel<String>(new String[]
+				{ "Cinza Plus", "Luxury", "Austria", "Yungay Mix", "Thal\u00EDa" }));
+				cboModelo.setSelectedIndex(0);
+				
+						lblModelo = new JLabel("Modelo");
+						lblModelo.setBounds(13, 8, 94, 14);
+						panel_1.add(lblModelo);
+						lblModelo.setForeground(Color.BLACK);
+						lblModelo.setFont(new Font("Tahoma", Font.BOLD, 12));
+						lblModelo.setBackground(Color.WHITE);
+		
+		panel_1_1 = new JPanel();
+		panel_1_1.setBounds(10, 87, 358, 34);
+		panel_1_1.setBackground(new Color(223, 211, 195));
+		getContentPane().add(panel_1_1);
+		panel_1_1.setLayout(null);
+		
+				lblPrecio = new JLabel("Precio (S/.)");
+				lblPrecio.setBounds(10, 11, 94, 14);
+				panel_1_1.add(lblPrecio);
+				lblPrecio.setForeground(Color.BLACK);
+				lblPrecio.setFont(new Font("Tahoma", Font.BOLD, 12));
+				lblPrecio.setBackground(Color.WHITE);
+				
+						txt1 = new JTextField();
+						txt1.setText("92.56");
+						txt1.setBounds(114, 8, 231, 20);
+						panel_1_1.add(txt1);
+						txt1.setForeground(Color.BLACK);
+						txt1.setFont(new Font("Verdana", Font.BOLD, 11));
+						txt1.setEditable(false);
+						txt1.setColumns(10);
+		
+		panel_1_2 = new JPanel();
+		panel_1_2.setBounds(10, 136, 358, 34);
+		panel_1_2.setBackground(new Color(223, 211, 195));
+		getContentPane().add(panel_1_2);
+		panel_1_2.setLayout(null);
+		
+				lblAncho = new JLabel("Ancho (cm)");
+				lblAncho.setBounds(10, 11, 94, 14);
+				panel_1_2.add(lblAncho);
+				lblAncho.setForeground(Color.BLACK);
+				lblAncho.setFont(new Font("Tahoma", Font.BOLD, 12));
+				lblAncho.setBackground(Color.WHITE);
+				
+						txt2 = new JTextField();
+						txt2.setText("62.0");
+						txt2.setBounds(114, 8, 231, 20);
+						panel_1_2.add(txt2);
+						txt2.setForeground(Color.BLACK);
+						txt2.setFont(new Font("Verdana", Font.BOLD, 11));
+						txt2.setEditable(false);
+						txt2.setColumns(10);
+		
+		panel_1_3 = new JPanel();
+		panel_1_3.setBounds(10, 181, 358, 34);
+		panel_1_3.setBackground(new Color(223, 211, 195));
+		getContentPane().add(panel_1_3);
+		panel_1_3.setLayout(null);
+		
+				lblLargo = new JLabel("Largo (cm)");
+				lblLargo.setBounds(10, 11, 94, 14);
+				panel_1_3.add(lblLargo);
+				lblLargo.setForeground(Color.BLACK);
+				lblLargo.setFont(new Font("Tahoma", Font.BOLD, 12));
+				lblLargo.setBackground(Color.WHITE);
+				
+						txt3 = new JTextField();
+						txt3.setText("62.0");
+						txt3.setBounds(114, 8, 231, 20);
+						panel_1_3.add(txt3);
+						txt3.setForeground(Color.BLACK);
+						txt3.setFont(new Font("Verdana", Font.BOLD, 11));
+						txt3.setEditable(false);
+						txt3.setColumns(10);
+		
+		panel_1_4 = new JPanel();
+		panel_1_4.setBounds(10, 226, 358, 34);
+		panel_1_4.setBackground(new Color(223, 211, 195));
+		getContentPane().add(panel_1_4);
+		panel_1_4.setLayout(null);
+		
+				lblEspesor = new JLabel("Espesor (mm)");
+				lblEspesor.setBounds(10, 11, 94, 14);
+				panel_1_4.add(lblEspesor);
+				lblEspesor.setForeground(Color.BLACK);
+				lblEspesor.setFont(new Font("Tahoma", Font.BOLD, 12));
+				lblEspesor.setBackground(Color.WHITE);
+				
+						txt4 = new JTextField();
+						txt4.setText("8.0");
+						txt4.setBounds(114, 8, 231, 20);
+						panel_1_4.add(txt4);
+						txt4.setForeground(Color.BLACK);
+						txt4.setFont(new Font("Verdana", Font.BOLD, 11));
+						txt4.setEditable(false);
+						txt4.setColumns(10);
+		
+		panel_1_5 = new JPanel();
+		panel_1_5.setBounds(10, 271, 358, 34);
+		panel_1_5.setBackground(new Color(223, 211, 195));
+		getContentPane().add(panel_1_5);
+		panel_1_5.setLayout(null);
+		
+				lblContenido = new JLabel("Contenido");
+				lblContenido.setBounds(10, 11, 94, 14);
+				panel_1_5.add(lblContenido);
+				lblContenido.setForeground(Color.BLACK);
+				lblContenido.setFont(new Font("Tahoma", Font.BOLD, 12));
+				lblContenido.setBackground(Color.WHITE);
+				
+						txt5 = new JTextField();
+						txt5.setText("6");
+						txt5.setBounds(114, 8, 231, 20);
+						panel_1_5.add(txt5);
+						txt5.setForeground(Color.BLACK);
+						txt5.setFont(new Font("Verdana", Font.BOLD, 11));
+						txt5.setEditable(false);
+						txt5.setColumns(10);
+
+		// --------------------------------------------------------
+
+	    }
+
+	    public void actionPerformed(ActionEvent e){
+	    	if (e.getSource() == cboModelo){
+		    actionPerformedCboModelo(e);
+			}
+	    }
+
+	    protected void actionPerformedCboModelo(ActionEvent e){
+	    String mod;
+	    double precio, ancho, largo, espesor;
+	    int contenido;
+	    
+	    mod = cboModelo.getSelectedItem().toString();
+	    
+	    if (mod=="Cinza Plus") {
+	        precio = Menu.precio0;
+	        ancho = Menu.ancho0;
+	        largo = Menu.largo0;
+	        espesor = Menu.espesor0;
+	        contenido = Menu.contenido0;
+	    } else if (mod=="Luxury") {
+	        precio = Menu.precio1;
+	        ancho = Menu.ancho1;
+	        largo = Menu.largo1;
+	        espesor = Menu.espesor1;
+	        contenido = Menu.contenido1;
+	    } else if (mod=="Austria") {
+	        precio = Menu.precio2;
+	        ancho = Menu.ancho2;
+	        largo = Menu.largo2;
+	        espesor = Menu.espesor2;
+	        contenido = Menu.contenido2;
+	    } else if (mod=="Yungay Mix") {
+	        precio = Menu.precio3;
+	        ancho = Menu.ancho3;
+	        largo = Menu.largo3;
+	        espesor = Menu.espesor3;
+	        contenido = Menu.contenido3;
+	    } else {
+	        precio = Menu.precio4;
+	        ancho = Menu.ancho4;
+	        largo = Menu.largo4;
+	        espesor = Menu.espesor4;
+	        contenido = Menu.contenido4;
+	    }
+	    txt1.setText(String.valueOf(precio));
+	    txt2.setText(String.valueOf(ancho));
+	    txt3.setText(String.valueOf(largo));
+	    txt4.setText(String.valueOf(espesor));
+	    txt5.setText(String.valueOf(contenido));
+	 }
+}

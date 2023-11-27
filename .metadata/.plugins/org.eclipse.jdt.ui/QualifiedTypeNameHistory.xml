@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.awt.BorderLayout"/>
+    <fullyQualifiedTypeName name="com.formdev.flatlaf.FlatIntelliJLaf"/>
+    <fullyQualifiedTypeName name="com.formdev.flatlaf.FlatLightLaf"/>
+    <fullyQualifiedTypeName name="Laucher.DlgVender"/>
+    <fullyQualifiedTypeName name="Laucher.DlgConfigurarCantidadOptima"/>
+    <fullyQualifiedTypeName name="Laucher.DlgConfigurarCuotaDiaria"/>
+    <fullyQualifiedTypeName name="Laucher.DlgConfigurarObsequio"/>
+    <fullyQualifiedTypeName name="javax.swing.JPanel"/>
+    <fullyQualifiedTypeName name="com.formdev.flatlaf.themes.FlatMacDarkLaf"/>
+    <fullyQualifiedTypeName name="com.formdev.flatlaf.FlatDarkLaf"/>
+    <fullyQualifiedTypeName name="com.formdev.flatlaf.FlatDarculaLaf"/>
+    <fullyQualifiedTypeName name="Laucher.DlgConfigurarDescuento"/>
+    <fullyQualifiedTypeName name="Laucher.DlgGenerarReportes"/>
+    <fullyQualifiedTypeName name="Laucher.DlgModificarCeramico"/>
+    <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
+    <fullyQualifiedTypeName name="java.awt.Dimension"/>
+    <fullyQualifiedTypeName name="javax.swing.JScrollPane"/>
+    <fullyQualifiedTypeName name="javax.swing.JTextArea"/>
+    <fullyQualifiedTypeName name="Laucher.DlgListarCeramico"/>
+    <fullyQualifiedTypeName name="Laucher.DlgConsultarCeramico"/>
+    <fullyQualifiedTypeName name="javax.swing.JComboBox"/>
+    <fullyQualifiedTypeName name="javax.swing.JLabel"/>
+    <fullyQualifiedTypeName name="javax.swing.JTextField"/>
+    <fullyQualifiedTypeName name="java.awt.Font"/>
+    <fullyQualifiedTypeName name="java.awt.Color"/>
+    <fullyQualifiedTypeName name="javax.swing.DefaultComboBoxModel"/>
+    <fullyQualifiedTypeName name="Laucher.DlgAcercaDeTienda"/>
+</qualifiedTypeNameHistroy>

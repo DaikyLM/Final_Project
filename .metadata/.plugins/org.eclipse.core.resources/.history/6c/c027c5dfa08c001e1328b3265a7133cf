@@ -1,0 +1,221 @@
+package Laucher;
+
+
+import java.awt.Color;
+import java.awt.EventQueue;
+
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+
+import com.formdev.flatlaf.themes.FlatMacLightLaf;
+import java.awt.Toolkit;
+import javax.swing.SwingConstants;
+
+public class DlgConfigurarObsequio extends JDialog implements ActionListener{
+
+	private static final long serialVersionUID = 1L;
+    private JLabel lblTipoObsequio;
+    private JLabel lbl1_5;
+    private JLabel lbl5_10;
+    private JLabel lblCantidadMayorA;
+    private JTextField txtObsequio;
+    private JTextField txtCant1;
+    private JTextField txtCant2;
+    private JTextField txtCant3;
+    private JButton btnAplicar;
+    private JButton btnCancelar;
+
+	/**
+	 * Launch the application.
+	 */
+public static void main(String[] args) {
+		
+		/*AQUI SE HACE REFERENCIA A flatlaf PARA EL UI DESIGN*/
+		try {
+			UIManager.setLookAndFeel(new FlatMacLightLaf());
+			/*AQUI LA LISTA DE ESTILOS QUE PUEDES USAR*/
+			/**
+			 * UIManager.setLookAndFeel(new FlatLightLaf());
+			 * UIManager.setLookAndFeel(new FlatDarkLaf());
+			 * UIManager.setLookAndFeel(new FlatIntelliJLaf());
+			 * UIManager.setLookAndFeel(new FlatDarculaLaf());
+			 * UIManager.setLookAndFeel(new FlatMacLightLaf());
+			 * UIManager.setLookAndFeel(new FlatMacDarkLaf());
+			 */
+			
+		} catch (UnsupportedLookAndFeelException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					DlgConfigurarObsequio dialog = new DlgConfigurarObsequio();
+					dialog.setLocationRelativeTo(null);
+					dialog.setVisible(true);
+					dialog.setResizable(false); 
+				}
+				catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the dialog.
+	 */
+	public DlgConfigurarObsequio() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(DlgConfigurarObsequio.class.getResource("/imagenes/obsequio.png")));
+		setTitle("Configurar Obsequios");
+		setBounds(100, 100, 552, 259);
+		getContentPane().setBackground(new Color(239, 225, 209));
+		getContentPane().setLayout(null);
+		setResizable(false);
+
+		lblTipoObsequio = new JLabel("Tipo de obsequio :");
+		lblTipoObsequio.setForeground(new Color(51, 29, 44));
+		lblTipoObsequio.setBackground(Color.WHITE);
+		lblTipoObsequio.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblTipoObsequio.setBounds(42, 51, 118, 14);
+		getContentPane().add(lblTipoObsequio);
+
+		lbl1_5 = new JLabel("1 - 5 unidades :");
+		lbl1_5.setForeground(new Color(51, 29, 44));
+		lbl1_5.setBackground(Color.WHITE);
+		lbl1_5.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lbl1_5.setBounds(42, 82, 118, 14);
+		getContentPane().add(lbl1_5);
+
+		lbl5_10 = new JLabel("6 - 10 unidades :");
+		lbl5_10.setForeground(new Color(51, 29, 44));
+		lbl5_10.setBackground(Color.WHITE);
+		lbl5_10.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lbl5_10.setBounds(42, 113, 140, 14);
+		getContentPane().add(lbl5_10);
+
+		lblCantidadMayorA = new JLabel("11 a más unidades :");
+		lblCantidadMayorA.setForeground(new Color(51, 29, 44));
+		lblCantidadMayorA.setBackground(Color.WHITE);
+		lblCantidadMayorA.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblCantidadMayorA.setBounds(42, 144, 167, 14);
+		getContentPane().add(lblCantidadMayorA);
+
+		txtObsequio = new JTextField();
+		txtObsequio.setText(Menu.tipoObsequio);
+		txtObsequio.setHorizontalAlignment(SwingConstants.LEFT);
+		txtObsequio.setForeground(Color.BLACK);
+		txtObsequio.setFont(new Font("Verdana", Font.BOLD, 11));
+		txtObsequio.setBounds(178, 48, 167, 23);
+		getContentPane().add(txtObsequio);
+		txtObsequio.setColumns(10);
+
+		txtCant1 = new JTextField();
+		txtCant1.setText(String.valueOf(Menu.obsequioCantidad1));
+		txtCant1.setForeground(Color.BLACK);
+		txtCant1.setFont(new Font("Verdana", Font.BOLD, 11));
+		txtCant1.setColumns(10);
+		txtCant1.setBounds(178, 82, 167, 20);
+		getContentPane().add(txtCant1);
+
+		txtCant2 = new JTextField();
+		txtCant2.setText(String.valueOf(Menu.obsequioCantidad2));
+		txtCant2.setForeground(Color.BLACK);
+		txtCant2.setFont(new Font("Verdana", Font.BOLD, 11));
+		txtCant2.setColumns(10);
+		txtCant2.setBounds(178, 113, 167, 20);
+		getContentPane().add(txtCant2);
+
+		txtCant3 = new JTextField();
+		txtCant3.setText(String.valueOf(Menu.obsequioCantidad3));
+		txtCant3.setForeground(Color.BLACK);
+		txtCant3.setFont(new Font("Verdana", Font.BOLD, 11));
+		txtCant3.setColumns(10);
+		txtCant3.setBounds(178, 144, 167, 20);
+		getContentPane().add(txtCant3);
+
+		btnAplicar = new JButton("Aplicar");
+		btnAplicar.setBackground(new Color(63, 46, 62));
+		btnAplicar.setForeground(Color.WHITE);
+		btnAplicar.setFont(new Font("Verdana", Font.BOLD, 11));
+		btnAplicar.addActionListener(this);
+		btnAplicar.setBounds(402, 62, 104, 34);
+		getContentPane().add(btnAplicar);
+		
+		btnCancelar = new JButton("Cancelar");
+		
+		btnCancelar.setBackground(new Color(63, 46, 62));
+		btnCancelar.setForeground(Color.WHITE);
+		btnCancelar.addActionListener(this);
+		btnCancelar.setFont(new Font("Verdana", Font.BOLD, 11));
+		btnCancelar.setBounds(402, 122, 104, 36);
+		getContentPane().add(btnCancelar);
+		
+		JPanel top = new JPanel();
+		top.setBounds(0, 0, 536, 25);
+		top.setBackground(new Color(63, 46, 62));
+		getContentPane().add(top);
+		
+		JPanel bottom = new JPanel();
+		bottom.setBounds(0, 195, 536, 25);
+		bottom.setBackground(new Color(63, 46, 62));
+		getContentPane().add(bottom);
+		see_values();
+	    }
+	
+		public void actionPerformed(ActionEvent e) {
+			if (e.getSource() == btnAplicar) {
+				actionPerformedBtnAplicar(e);
+			}if (e.getSource() == btnCancelar) {
+				actionPerformedBtnCancelar(e);
+			}
+		}
+
+		protected void actionPerformedBtnCancelar(ActionEvent e) {
+			dispose();
+		}
+
+		protected void actionPerformedBtnAplicar(ActionEvent e) {
+			if (allFieldsFilled()) {
+				if (update_values()) {
+					JOptionPane.showMessageDialog(this, "Obsequios Actualizados");
+				} else {
+					JOptionPane.showMessageDialog(this, "Error, Inténtelo más tarde");
+				}
+			} else {
+				JOptionPane.showMessageDialog(this, "Por favor, complete todos los campos.");
+			}
+		}
+	    //mis metodos
+		private void see_values()
+	    {
+	    }
+
+		private boolean allFieldsFilled() {
+			return !txtObsequio.getText().isEmpty() && !txtCant1.getText().isEmpty() && !txtCant2.getText().isEmpty()
+					&& !txtCant3.getText().isEmpty();
+		}
+
+		private boolean update_values() {
+			try {
+				Menu.tipoObsequio = txtObsequio.getText();
+				Menu.obsequioCantidad1 = Integer.parseInt(txtCant1.getText());
+				Menu.obsequioCantidad2 = Integer.parseInt(txtCant2.getText());
+				Menu.obsequioCantidad3 = Integer.parseInt(txtCant3.getText());
+				return true;
+			} catch (Exception e) {
+				return false;
+			}
+		}
+	}

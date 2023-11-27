@@ -1,0 +1,318 @@
+package Laucher;
+
+
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.EventQueue;
+
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JDialog;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+
+
+import com.formdev.flatlaf.themes.FlatMacLightLaf;
+import java.awt.Toolkit;
+
+public class DlgConsultarCeramico extends JDialog implements ActionListener{
+
+	private static final long serialVersionUID = 1L;
+
+	private JLabel lblModelo;
+	private JLabel lblPrecio;
+	private JLabel lblAncho;
+	private JLabel lblLargo;
+	private JLabel lblEspesor;
+	private JLabel lblContenido;
+	private JTextField txtPrecio;
+	private JTextField txtAncho;
+	private JTextField txtLargo;
+	private JTextField txtEspesor;
+	private JTextField txtContenido;
+	private JComboBox<String> cboModelo;
+	private JButton btnCerrar;
+	private JPanel TOP;
+	private JPanel BUTTOM;
+	private JPanel fondo;
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+
+		/* AQUI SE HACE REFERENCIA A flatlaf PARA EL UI DESIGN */
+		try {
+			UIManager.setLookAndFeel(new FlatMacLightLaf());
+			/* AQUI LA LISTA DE ESTILOS QUE PUEDES USAR */
+			/**
+			 * UIManager.setLookAndFeel(new FlatLightLaf()); UIManager.setLookAndFeel(new
+			 * FlatDarkLaf()); UIManager.setLookAndFeel(new FlatIntelliJLaf());
+			 * UIManager.setLookAndFeel(new FlatDarculaLaf()); UIManager.setLookAndFeel(new
+			 * FlatMacLightLaf()); UIManager.setLookAndFeel(new FlatMacDarkLaf());
+			 */
+
+		} catch (UnsupportedLookAndFeelException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					DlgConsultarCeramico dialog = new DlgConsultarCeramico();
+					dialog.setLocationRelativeTo(null);
+					dialog.setVisible(true);
+					dialog.setResizable(false); 
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+	/**
+	 * Create the dialog.
+	 */
+	public DlgConsultarCeramico() {
+		setIconImage(Toolkit.getDefaultToolkit()
+				.getImage(DlgConsultarCeramico.class.getResource("/imagenes/Consultar.png")));
+		setTitle("Consulta Cerámicos");
+		getContentPane().setFont(new Font("Tahoma", Font.BOLD, 12));
+		getContentPane().setForeground(Color.BLACK);
+		getContentPane().setBackground(Color.WHITE);
+		setBounds(100, 100, 568, 384);
+		setResizable(false);
+		getContentPane().setLayout(null);
+		
+		TOP = new JPanel();
+		TOP.setBackground(new Color(133, 88, 111));
+		TOP.setBounds(0, 0, 552, 20);
+		getContentPane().add(TOP);
+		
+		BUTTOM = new JPanel();
+		BUTTOM.setBackground(new Color(133, 88, 111));
+		BUTTOM.setBounds(0, 325, 552, 20);
+		getContentPane().add(BUTTOM);
+		
+		fondo = new JPanel();
+		fondo.setBackground(Color.decode("#F8EDE3"));
+		fondo.setBounds(0, 11, 552, 334);
+		getContentPane().add(fondo);
+		fondo.setLayout(null);
+		
+		lblPrecio = new JLabel("Precio (S/.)");
+		lblPrecio.setBounds(36, 84, 82, 14);
+		fondo.add(lblPrecio);
+		lblPrecio.setFont(new Font("Tahoma", Font.BOLD, 12));
+		lblPrecio.setBackground(Color.WHITE);
+		lblPrecio.setForeground(Color.BLACK);
+		
+		txtPrecio = new JTextField();
+		txtPrecio.setEditable(false);
+		txtPrecio.setBounds(144, 81, 231, 20);
+		fondo.add(txtPrecio);
+		txtPrecio.setMinimumSize(new Dimension(9, 22));
+		txtPrecio.setForeground(Color.BLACK);
+		txtPrecio.setFont(new Font("Verdana", Font.BOLD, 11));
+		txtPrecio.setColumns(10);
+		
+		txtAncho = new JTextField();
+		txtAncho.setEditable(false);
+		txtAncho.setBounds(144, 126, 231, 20);
+		fondo.add(txtAncho);
+		txtAncho.setMinimumSize(new Dimension(9, 22));
+		txtAncho.setForeground(Color.BLACK);
+		txtAncho.setFont(new Font("Verdana", Font.BOLD, 11));
+		txtAncho.setColumns(10);
+		
+		lblAncho = new JLabel("Ancho (cm)");
+		lblAncho.setBounds(36, 130, 82, 14);
+		fondo.add(lblAncho);
+		lblAncho.setFont(new Font("Tahoma", Font.BOLD, 12));
+		lblAncho.setBackground(Color.WHITE);
+		lblAncho.setForeground(Color.BLACK);
+		
+		lblLargo = new JLabel("Largo (cm)");
+		lblLargo.setBounds(36, 174, 82, 14);
+		fondo.add(lblLargo);
+		lblLargo.setFont(new Font("Tahoma", Font.BOLD, 12));
+		lblLargo.setBackground(Color.WHITE);
+		lblLargo.setForeground(Color.BLACK);
+		
+		txtLargo = new JTextField();
+		txtLargo.setEditable(false);
+		txtLargo.setBounds(144, 171, 231, 20);
+		fondo.add(txtLargo);
+		txtLargo.setMinimumSize(new Dimension(9, 22));
+		txtLargo.setForeground(Color.BLACK);
+		txtLargo.setFont(new Font("Verdana", Font.BOLD, 11));
+		txtLargo.setColumns(10);
+		
+		txtEspesor = new JTextField();
+		txtEspesor.setEditable(false);
+		txtEspesor.setBounds(144, 216, 231, 20);
+		fondo.add(txtEspesor);
+		txtEspesor.setMinimumSize(new Dimension(9, 22));
+		txtEspesor.setForeground(Color.BLACK);
+		txtEspesor.setFont(new Font("Verdana", Font.BOLD, 11));
+		txtEspesor.setColumns(10);
+		
+		lblContenido = new JLabel("Contenido");
+		lblContenido.setBounds(36, 262, 82, 14);
+		fondo.add(lblContenido);
+		lblContenido.setFont(new Font("Tahoma", Font.BOLD, 12));
+		lblContenido.setBackground(Color.WHITE);
+		lblContenido.setForeground(Color.BLACK);
+		
+		txtContenido = new JTextField();
+		txtContenido.setEditable(false);
+		txtContenido.setBounds(144, 258, 231, 20);
+		fondo.add(txtContenido);
+		txtContenido.setMinimumSize(new Dimension(9, 22));
+		txtContenido.setForeground(Color.BLACK);
+		txtContenido.setFont(new Font("Verdana", Font.BOLD, 11));
+		txtContenido.setColumns(10);
+		
+		lblEspesor = new JLabel("Espesor (mm)");
+		lblEspesor.setBounds(36, 220, 98, 14);
+		fondo.add(lblEspesor);
+		lblEspesor.setFont(new Font("Tahoma", Font.BOLD, 12));
+		lblEspesor.setBackground(Color.WHITE);
+		lblEspesor.setForeground(Color.BLACK);
+		
+		btnCerrar = new JButton("Cerrar");
+		btnCerrar.setBounds(426, 115, 99, 43);
+		fondo.add(btnCerrar);
+		btnCerrar.setFont(new Font("Verdana", Font.BOLD, 11));
+		btnCerrar.setForeground(Color.WHITE);
+		btnCerrar.setBackground(new Color(133, 88, 111));
+		
+		JPanel contModelo = new JPanel();
+		contModelo.setBackground(new Color(223, 211, 195));
+		contModelo.setBounds(28, 32, 358, 34);
+		fondo.add(contModelo);
+		contModelo.setLayout(null);
+		
+		cboModelo = new JComboBox<String>();
+		cboModelo.setBounds(118, 6, 231, 22);
+		contModelo.add(cboModelo);
+		cboModelo.setForeground(Color.BLACK);
+		cboModelo.setBackground(Color.WHITE);
+		cboModelo.setFont(new Font("Verdana", Font.BOLD, 12));
+		cboModelo.addActionListener(this);
+		cboModelo.setModel(new DefaultComboBoxModel <String>(new String[] {"Cinza Plus", "Luxury", "Austria", "Yungay Mix", "Thal\u00EDa"}));
+		
+		lblModelo = new JLabel("Modelo");
+		lblModelo.setBounds(10, 10, 82, 14);
+		contModelo.add(lblModelo);
+		lblModelo.setFont(new Font("Tahoma", Font.BOLD, 12));
+		lblModelo.setBackground(Color.WHITE);
+		lblModelo.setForeground(Color.BLACK);
+		
+		JPanel contPrecio = new JPanel();
+		contPrecio.setBackground(new Color(223, 211, 195));
+		contPrecio.setBounds(28, 74, 358, 34);
+		fondo.add(contPrecio);
+		contPrecio.setLayout(null);
+		
+		JPanel contAncho = new JPanel();
+		contAncho.setBackground(new Color(223, 211, 195));
+		contAncho.setBounds(28, 119, 358, 34);
+		fondo.add(contAncho);
+		contAncho.setLayout(null);
+		
+		JPanel contLargo = new JPanel();
+		contLargo.setBackground(new Color(223, 211, 195));
+		contLargo.setBounds(28, 164, 358, 34);
+		fondo.add(contLargo);
+		contLargo.setLayout(null);
+		
+		JPanel contEspesor = new JPanel();
+		contEspesor.setBackground(new Color(223, 211, 195));
+		contEspesor.setBounds(28, 209, 358, 34);
+		fondo.add(contEspesor);
+		contEspesor.setLayout(null);
+		
+		JPanel contContenido = new JPanel();
+		contContenido.setBackground(new Color(223, 211, 195));
+		contContenido.setBounds(28, 251, 358, 34);
+		fondo.add(contContenido);
+		contContenido.setLayout(null);
+		btnCerrar.addActionListener(this);
+	}
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == btnCerrar) {
+			actionPerformedBtnCerrar(e);
+		}
+		if (e.getSource() == cboModelo) {
+			actionPerformedCboModelo(e);
+		}
+	}
+
+	protected void actionPerformedBtnCerrar(ActionEvent e) {
+		dispose();
+		
+	}
+	protected void actionPerformedCboModelo(ActionEvent e) {
+		// Obtienes el modelo seleccionado del JComboBox
+		String mod = cboModelo.getSelectedItem().toString();
+		/* Variables locales
+		pre = precio
+		anc = ancho
+		lar = largo
+		esp = espesor*/
+	    double pre, anc, lar, esp;
+	    int con;
+	    //Al Seleccionar cualquiera de los modelos, los valores cambian según el modelo
+	    switch (mod) {
+	        case "Cinza Plus":
+	            pre = Menu.precio0;
+	            anc = Menu.ancho0;
+	            lar = Menu.largo0;
+	            esp = Menu.espesor0;
+	            con = Menu.contenido0;
+	            break;
+	        case "Luxury":
+	            pre = Menu.precio1;
+	            anc = Menu.ancho1;
+	            lar = Menu.largo1;
+	            esp = Menu.espesor1;
+	            con = Menu.contenido1;
+	            break;
+	        case "Austria":
+	            pre = Menu.precio2;
+	            anc = Menu.ancho2;
+	            lar = Menu.largo2;
+	            esp = Menu.espesor2;
+	            con = Menu.contenido2;
+	            break;
+	        case "Yungay Mix":
+	            pre = Menu.precio3;
+	            anc = Menu.ancho3;
+	            lar = Menu.largo3;
+	            esp = Menu.espesor3;
+	            con = Menu.contenido3;
+	            break;
+	        default:
+	            pre = Menu.precio4;
+	            anc = Menu.ancho4;
+	            lar = Menu.largo4;
+	            esp = Menu.espesor4;
+	            con = Menu.contenido4;
+	            break;
+	    }
+	    // Muestra la información en los campos de texto correspondientes
+	    txtPrecio.setText(String.valueOf(pre));
+	    txtAncho.setText(String.valueOf(anc));
+	    txtLargo.setText(String.valueOf(lar));
+	    txtEspesor.setText(String.valueOf(esp));
+	    txtContenido.setText(String.valueOf(con));
+	}
+}
